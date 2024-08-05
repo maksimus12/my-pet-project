@@ -1,10 +1,5 @@
-
-
-<?php 
-    // require_once './Controllers/UserController.php';
-    // $userControl = new UserController();
-    // $errors = $userControl->getErrors();
-    // $data = $userControl->getData();
+<?php
+require_once __DIR__ . '/templates/header.php';
 ?>
 <style>
     .form-cont{
@@ -20,7 +15,7 @@
 </style>
 
 <div class="d-flex justify-content-center form-cont">
-    <form action="/users-db/src/" method="POST">
+    <form action="/users/add" method="POST">
         <div class="mb-3">
             <label for="exampleFormControlInput1" class="form-label">Name</label>
             <input type="text" name="name" class="form-control" placeholder="Max" value="<?= isset($_POST['name']) ? htmlspecialchars($_POST['name']) : '' ?>">
@@ -47,3 +42,6 @@
         </div>
     </form>
 </div>
+<?php
+require_once __DIR__ . '/templates/footer.php';
+?>
