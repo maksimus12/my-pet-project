@@ -2,9 +2,9 @@
 
 <?php 
     // require_once './Controllers/UserController.php';
-    $userControl = new UserController();
-    $errors = $userControl->getErrors();
-    $data = $userControl->getData();
+    // $userControl = new UserController();
+    // $errors = $userControl->getErrors();
+    // $data = $userControl->getData();
 ?>
 <style>
     .form-cont{
