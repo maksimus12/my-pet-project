@@ -8,7 +8,14 @@ require_once __DIR__ . '/../src/Models/User.php';
 $pdo = Db_connection::getPDO();
 $userModel = new User($pdo);
 
-switch ($request) {
+//Объявляем переменную для хранения директории, которую мы хотим отрезать от URL.
+// Это нужно для того, чтобы в дальнейшем сравнивать URL без директории.
+$mainDir = '/my-pet-project/public';
+// Отрезаем директорию от URL
+$url = str_replace($mainDir, '', $request);
+
+// Проверяем URL и подключаем нужный контроллер
+switch ($url) {
     case '/':
         require '../src/Controllers/HomeController.php';
         $controller = new HomeController();
