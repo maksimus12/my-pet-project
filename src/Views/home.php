@@ -1,4 +1,6 @@
-
+<?php
+require_once __DIR__ . '/templates/header.php';
+?>
 <style>
     .home-cont{
         min-height: 500px;
@@ -9,3 +11,6 @@
 
     <h1>I AM HOME</h1>
 </div>
+<?php
+require_once __DIR__ . '/templates/footer.php';
+?>

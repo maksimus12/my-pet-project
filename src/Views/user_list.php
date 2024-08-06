@@ -1,4 +1,6 @@
-
+<?php
+require_once __DIR__ . '/templates/header.php';
+?>
 <style>
     th, td{
         padding: 5px;
@@ -21,13 +23,6 @@
     width: 100%;
     }   
 </style>
-<?php 
-    $conn = Db_connection::getPDO();
-    $userData = new GetUser($conn);
-    $users = $userData->getRecords();
-
-
-?>
 <div class="table-wrap">
     <h1>HELLO I AM DB</h1>
     <div class="table-cont">
@@ -43,13 +38,16 @@
             <tbody>
                 <?php foreach($users as $user){?>
                 <tr>
-                <th scope="row"><?php $user['id']?></th>
-                <td><?php $user['name']?></td>
-                <td><?php $user['email']?></td>
-                <td>@<?php $user['phone']?></td>
+                <th scope="row"><?php echo $user['id']?></th>
+                <td><?php echo $user['name']?></td>
+                <td><?php echo $user['email']?></td>
+                <td><?php echo $user['phone']?></td>
                 </tr>
                 <?php }?>
             </tbody>
         </table>
     </div>
 </div>
+<?php
+require_once __DIR__ . '/templates/footer.php';
+?>
